@@ -1,0 +1,58 @@
+/* context-menu 右键菜单
+-------------------------- */
+$box-shadow: 2px 2px 3px 0 rgba(0,0,0,.1);
+$item-pad: 5px 15px;
+$font-size: 12px;
+
+.mod-menu-context {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 6px 0;
+  z-index: 9999;
+  color: $-color-content;
+  background-color: $--color-white;
+  border: 1px solid $-bg-base;
+  box-shadow: $box-shadow;
+  border-radius: 4px;
+
+  > li {
+    position: relative;
+    margin: 0;
+    padding: $item-pad;
+    line-height: $font-size;
+    font-size: $font-size;
+    white-space: nowrap;
+    &:hover, &.is-active {
+      background-color: darken($-bg-base, 3%);
+      cursor: default;
+    }
+    &:hover {
+      > ul {
+        display: block;
+        margin-top: -7px;
+      }
+    } 
+    > ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      padding: 6px 0;
+      z-index: 9999;
+      color: $-color-content;
+      background-color: $--color-white;
+      border: 1px solid $-color-border;
+      box-shadow: $--box-shadow-light;
+    }
+    > i {
+      position: absolute;
+      left: 5px;
+      display: inline-block;
+      width: 20px;
+      line-height: inherit;
+      text-align: center;
+      color: $-color-sub;
+    }
+  }
+}
